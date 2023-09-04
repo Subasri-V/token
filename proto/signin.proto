@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option go_package="https://github.com/Subasri-V/token.git";
+
+package proto;
+
+service AuthService {
+    rpc SignIn(SignInRequest) returns (SignInResponse);
+}
+
+message SignInRequest {
+    string username = 1;
+    string password = 2;
+}
+
+message SignInResponse {
+    string access_token = 1;
+    string message = 2;
+}
